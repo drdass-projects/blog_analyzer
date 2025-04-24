@@ -12,6 +12,8 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [blogCount, setBlogCount] = useState(0);
 
+  const BACKEND_URL = "http://54.242.240.81:8000";
+
   useEffect(() => {
     document.body.className = darkMode ? "dark" : "light";
   }, [darkMode]);
@@ -23,7 +25,7 @@ export default function App() {
     setBlogCount(0);
 
     try {
-      const res = await axios.get("http://localhost:8000/fetch-and-analyze", {
+      const res = await axios.get(`${BACKEND_URL}/fetch-and-analyze`, {
         params: {
           keyword: keyword,
           filename: fileNameInput.trim(),
@@ -90,7 +92,7 @@ export default function App() {
           <div className="output success">
             ✅ Found {blogCount} blogs.
             <a
-              href={`http://localhost:8000/${fileName}`}
+              href={`${BACKEND_URL}/${fileName}`}
               download={fileName}
               style={{ marginLeft: "10px", textDecoration: "underline", color: "#93c5fd" }}
             >
