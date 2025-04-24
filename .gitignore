@@ -47,3 +47,12 @@ backend/venv/
 
 # OS files
 .DS_Store
+
+
+venv/
+__pycache__/
+*.pyc
+*.pkl
+*.dylib
+*.zip
+.DS_Store
