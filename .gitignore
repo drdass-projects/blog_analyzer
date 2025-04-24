@@ -56,3 +56,10 @@ __pycache__/
 *.dylib
 *.zip
 .DS_Store
+
+# Ignore node modules and cache
+node_modules/
+*.log
+.cache/
+frontend/node_modules/
+frontend/build/
